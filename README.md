@@ -9,8 +9,8 @@ This repo contains the reference source code of the CROW algorithm in PyTorch. C
 ### Dependencies
 The code is built with the following libraries
 
-- [PyTorch](https://pytorch.org/) - 2.2.1
-- [torchvision](https://pytorch.org/vision/stable/index.html) - 0.17.1
+- [PyTorch](https://pytorch.org/)
+- [torchvision](https://pytorch.org/vision/stable/index.html)
 - [numpy](http://numpy.org)
 - [scipy](http://scipy.org)
 - [scikit-learn](http://scikit-learn.org)
