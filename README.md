@@ -38,7 +38,7 @@ First, let's download the checkpoint of the CLIP pretrained model from [here](ht
 ```
 python get_features.py --dataset OfficeHome
 ```
-The _dataset_ should be one of the following: Office, OfficeHome, VisDA, or DomainNet
+The _dataset_ should be one of the following: Office, OfficeHome, VisDA, or DomainNet. The precomputed features will be saved in the folder './representations'.
 
 3. Clustering step: find the prototypes for the source and target samples using the precomputed representation features
 ```
