@@ -45,7 +45,7 @@ The _dataset_ should be one of the following: Office, OfficeHome, VisDA, or Doma
 python get_prototype_source.py --dataset OfficeHome --batch_size 256 --epochs 10 --learning_rate 1e-2
 python get_prototype_target.py --dataset OfficeHome --batch_size 1024
 ```
-The clustering step is to get the prototypes by applying k-means to the target samples and supervised learning to the source samples in the CLIP feature space. If these steps are not interesting to you, we provide the prototypes of both source and target samples. Please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'.
+The clustering step is to get the prototypes by applying k-means to the target samples and supervised learning to the source samples in the CLIP feature space. We provide the prototypes of both source and target samples. If you use our prototypes, please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'. Then, you can skip to step 4 (Matching and Finetuning).
 
 Please download the prototypes by running: _coming on June 20th_
 
