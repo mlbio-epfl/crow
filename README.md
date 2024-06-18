@@ -46,8 +46,8 @@ The _dataset_ should be one of the following: Office, OfficeHome, VisDA, or Doma
 
 3. Clustering step: find the prototypes for the source and target samples using the precomputed representation features
 ```
-python get_prototype_source.py --dataset OfficeHome --batch_size 256 --epochs 10 --learning_rate 1e-2
-python get_prototype_target.py --dataset OfficeHome --batch_size 1024
+python get_prototype_source.py --dataset OfficeHome
+python get_prototype_target.py --dataset OfficeHome
 ```
 
 4. Matching and Finetuning step:
