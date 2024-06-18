@@ -7,7 +7,7 @@ _________________
 This repo contains the reference source code of the CROW algorithm in PyTorch. CROW is a transductive learning algorithm for the cross-domain open-world discovery setting, where the goal is to recognize previously seen classes and discover novel classes simultaneously under the domain shift between labeled and unlabeled samples. CROW achieves state-of-the-art performance on the four universal domain adaptation benchmark datasets. For more details, please check our paper [Cross-domain Open-world Discovery](https://openreview.net/pdf?id=WofwaWjIf7) (ICML '24).
 
 </br>
-<div align="center" style="padding: 0 100pt" width="200">
+<div align="center" style="padding: 0 100pt" width="150">
 <img src="figures/setting.png">
 </div>
 </br>
