@@ -34,6 +34,10 @@ In our paper, we consider 75 different experiment settings. Here, we use OfficeH
 1. Get the CLIP pretrained model
 First, let's download the checkpoint of the CLIP pretrained model from [here](https://github.com/openai/CLIP/tree/main). In our experiment, we use ViT-L-14-336px. Please put it in the path './ckpt/clip/ViT-L-14-336px.pt'
 
+After getting the CLIP pretrained model, we begin to run CROW. Steps 2 and 3 are used to get the prototypes by applying k-means to the target samples and supervised learning to the source samples in the CLIP feature space. We provide the **precomputed prototypes** of both source and target samples. If you use our prototypes, please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'. Then, you can skip steps 2 and 3.
+
+Please download the prototypes by running: _coming on June 20th_
+
 2. Precompute and save the representation features
 ```
 python get_features.py --dataset OfficeHome
@@ -45,9 +49,6 @@ The _dataset_ should be one of the following: Office, OfficeHome, VisDA, or Doma
 python get_prototype_source.py --dataset OfficeHome --batch_size 256 --epochs 10 --learning_rate 1e-2
 python get_prototype_target.py --dataset OfficeHome --batch_size 1024
 ```
-The clustering step is to get the prototypes by applying k-means to the target samples and supervised learning to the source samples in the CLIP feature space. We provide the prototypes of both source and target samples. If you use our prototypes, please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'. Then, you can skip to step 4 (Matching and Finetuning).
-
-Please download the prototypes by running: _coming on June 20th_
 
 4. Matching and Finetuning step:
 ```
