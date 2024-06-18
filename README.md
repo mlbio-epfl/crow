@@ -8,7 +8,7 @@ This repo contains the reference source code of the CROW algorithm in PyTorch. C
 
 </br>
 <div align="center" style="padding: 0 100pt">
-<img src="figures/setting.png" width="150">
+<img src="figures/setting.png" width="600">
 </div>
 </br>
 
