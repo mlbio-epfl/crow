@@ -66,7 +66,7 @@ class UniDA_dataset(Dataset):
 
         self.images_target = lst
 
-        _, self.preprocess = clip.load("./ckpt/ViT-L-14-336px.pt")
+        _, self.preprocess = clip.load("./ckpt/clip/ViT-L-14-336px.pt")
 
     def __getitem__(self, idx):
 
