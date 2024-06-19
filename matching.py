@@ -107,7 +107,6 @@ for source in source_list:
         # 3.1. Get the distribution matrix Gamma
         Gamma = torch.zeros(total_num, seen_num).to(device)
         
-        count = 0
         for img_s, label_s, _, _ in dataloader_train:
 
             feature_extractor.eval()
@@ -133,11 +132,6 @@ for source in source_list:
                 for j in range(label_s.shape[0]):
                     pred_tmp = torch.argmax(output_tmp[j]).cpu().numpy()
                     Gamma[pred_tmp, label_s[j]] += 1
-
-            count += 1
-            if count == 5:
-                break
-            print(count)
         
         # 3.2. Get the distribution matrix D (Equation 1 in paper)
         D = softmax(Gamma / tau)
