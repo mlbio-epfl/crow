@@ -169,48 +169,47 @@ for source in source_list:
         for ep in range(int(iteration_max / iteration_eva)):
 
             # 4.1. Finetuning by iteration
-            if ep > 0:
-                iteration_num = 0
-                for img_s, label_s, img_t, label_t in dataloader_train:
-                    mask = label_s < seen_num
-                    img_s = img_s[mask]
-                    label_s = label_s[mask]
+            iteration_num = 0
+            for img_s, label_s, img_t, label_t in dataloader_train:
+                mask = label_s < seen_num
+                img_s = img_s[mask]
+                label_s = label_s[mask]
 
-                    if img_s.shape[0] == 0:
-                        continue
+                if img_s.shape[0] == 0:
+                    continue
 
-                    feature_extractor.train()
-                    head.train()
+                feature_extractor.train()
+                head.train()
 
-                    optimizer_fc.zero_grad()
-                    optimizer_cls.zero_grad()
+                optimizer_fc.zero_grad()
+                optimizer_cls.zero_grad()
 
-                    img_s = img_s.to(device)
-                    img_t = img_t.to(device)
+                img_s = img_s.to(device)
+                img_t = img_t.to(device)
 
-                    feature_s = feature_extractor.encode_image(img_s).to(torch.float32)
-                    feature_t = feature_extractor.encode_image(img_t).to(torch.float32)
+                feature_s = feature_extractor.encode_image(img_s).to(torch.float32)
+                feature_t = feature_extractor.encode_image(img_t).to(torch.float32)
 
-                    output_source, _, _ = head(feature_s)
-                    output_target, _, _ = head(feature_t)
+                output_source, _, _ = head(feature_s)
+                output_target, _, _ = head(feature_t)
 
-                    label_s = F.one_hot(label_s.to(torch.int64), num_classes = output_source.shape[1]).to(device)
+                label_s = F.one_hot(label_s.to(torch.int64), num_classes = output_source.shape[1]).to(device)
 
-                    # Get loss reg
-                    reg = -entropy(torch.mean(output_target, 0))
+                # Get loss reg
+                reg = -entropy(torch.mean(output_target, 0))
 
-                    loss = criterion(output_source, label_s.float()) + reg * weight_reg
+                loss = criterion(output_source, label_s.float()) + reg * weight_reg
 
-                    loss.backward(retain_graph=True)
-                    
-                    optimizer_fc.step()
-                    optimizer_cls.step()
-                    
-                    iteration_num += 1
-                    iteration_num_total += 1
+                loss.backward(retain_graph=True)
+                
+                optimizer_fc.step()
+                optimizer_cls.step()
+                
+                iteration_num += 1
+                iteration_num_total += 1
 
-                    if iteration_num > iteration_max / 50:
-                        break
+                if iteration_num > iteration_max / 50:
+                    break
 
             # 4.2. Evaluation after each number of 'iteration_eva' iterations
             with torch.no_grad():
