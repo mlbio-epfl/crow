@@ -98,7 +98,7 @@ for source in source_list:
         # 2.2.2. Get head (classifier)
         head = models.MLP_double(in_dim = 768, out_dim_1 = seen_num, out_dim_2 = total_num - seen_num)
 
-        checkpoint = torch.load(f'./ckpt/prototype_target/{dataset_name}/{target}.pth', map_location=device)
+        checkpoint = torch.load(f'./ckpt/prototype_target/{dataset_name}_{target}.pth', map_location=device)
         head.init_head(checkpoint, seen_num)
 
         head = head.to(device)
@@ -148,7 +148,7 @@ for source in source_list:
         M = torch.round(D + 0.5 - threshold)
 
         # 3.4. Initailize the head (W in paper) after matching
-        checkpoint_seen = torch.load(f'./ckpt/prototype_source/{dataset_name}/{source}.pt')
+        checkpoint_seen = torch.load(f'./ckpt/prototype_source/{dataset_name}_{source}.pt')
         head.init_head_M(checkpoint_seen, M, seen_num)
         head = head.to(device)
 
