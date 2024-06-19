@@ -33,8 +33,8 @@ class MLP_double(nn.Module):
     
     def init_head(self, checkpoint, num_seen):
 
-            self.head_seen.weight.data = torch.from_numpy(checkpoint).T.float()[:, :num_seen]
-            self.head_unseen.weight.data = torch.from_numpy(checkpoint).T.float()[:, num_seen:]
+        self.head_seen.weight.data = torch.from_numpy(checkpoint).T.float()[:, :num_seen]
+        self.head_unseen.weight.data = torch.from_numpy(checkpoint).T.float()[:, num_seen:]
         
         return True
     
