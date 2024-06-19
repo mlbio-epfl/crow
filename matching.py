@@ -154,7 +154,7 @@ for source in source_list:
         M = torch.round(D + 0.5 - threshold)
 
         # 3.4. Initailize the head (W in paper) after matching
-        checkpoint_seen = torch.load(f'./ckpt/prototype_target/{dataset_name}/{source}.pt')
+        checkpoint_seen = torch.load(f'./ckpt/prototype_source/{dataset_name}/{source}.pt')
         head.init_head_M(checkpoint_seen, M, seen_num)
         head = head.to(device)
 
