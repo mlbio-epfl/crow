@@ -202,7 +202,7 @@ for source in source_list:
                 iteration_num += 1
                 iteration_num_total += 1
 
-                if iteration_num > iteration_max / 50:
+                if iteration_num == iteration_max / 50:
                     break
 
             # 4.2. Evaluation after each number of 'iteration_eva' iterations
