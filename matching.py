@@ -43,7 +43,7 @@ iteration_eva = args.iteration_eva
 # If you want to freeze the CLIP ViT, change this to False
 finetune = True
 
-if dataset_name == 'Office31':
+if dataset_name == 'Office':
     source_list = ['amazon', 'dslr', 'webcam']
     target_list = ['amazon', 'dslr', 'webcam']
     total_num = 31
