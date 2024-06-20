@@ -42,7 +42,7 @@ First, let's download the checkpoint of the CLIP pretrained model from [here](ht
 
 After getting the CLIP pretrained model, we begin to run CROW. Steps 2 and 3 are used to get the prototypes by applying k-means to the target samples and supervised learning to the source samples in the CLIP feature space. We provide the **precomputed prototypes** of both source and target samples. If you use our prototypes, please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'. Then, you can skip steps 2 and 3.
 
-Please download the prototypes by running: _coming on June 20th_
+Please download the prototypes by running: _coming soon_
 
 2. Precompute and save the representation features
 ```
