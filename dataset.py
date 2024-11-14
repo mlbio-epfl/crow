@@ -160,8 +160,7 @@ class UniDA_lastlayerfeature(Dataset):
         label_s = self.images_source[idx_s]['label']
 
         idx_t = idx % len(self.images_target)
-        feature_t = torch.load(f'./representations/{self.dataset_name}/{self.target}/{idx_s}.pt')
-
+        feature_t = torch.load(f'./representations/{self.dataset_name}/{self.target}/{idx_t}.pt')
         label_t = self.images_target[idx_t]['label']
 
         feature_s = torch.autograd.Variable(feature_s,requires_grad = False)
