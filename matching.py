@@ -91,7 +91,7 @@ for source in source_list:
 
         if finetune == True:
             for name, param in feature_extractor.named_parameters(): 
-                # You can try to change the layers to finetuen!
+                # You can try to change the layers to finetune!
                 if 'visual.proj' in name or 'resblocks.23' in name or 'resblocks.22' in name or 'ln_post' in name:
                     param.requires_grad = True
 
