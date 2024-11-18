@@ -64,7 +64,7 @@ for target in target_list:
     feature_target = feature_t_all.to(torch.float32)
     feature_target = F.normalize(feature_target, dim=1)
 
-    kmeans = KMeans(n_clusters=total_class_num, random_state=8, n_init="auto").fit(feature_target.cpu())
+    kmeans = KMeans(n_clusters=total_class_num, n_init="auto").fit(feature_target.cpu())
     pred_t = kmeans.labels_
 
     unseen_acc_D2 = cluster_acc(pred_t, label_t_all.numpy())
