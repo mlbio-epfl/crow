@@ -21,6 +21,8 @@ The code is built with the following libraries
 - [scipy](http://scipy.org)
 - [scikit-learn](http://scikit-learn.org)
 - [clip](https://github.com/openai/CLIP)
+- [scanpy](https://scanpy.readthedocs.io/en/stable/index.html)
+- [anndata](https://anndata.readthedocs.io/en/latest/tutorials/notebooks/getting-started.html)
 
 ### Data Preparation
 
