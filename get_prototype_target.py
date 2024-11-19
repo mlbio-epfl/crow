@@ -124,8 +124,6 @@ if method == 'k-means' or method == 'louvain':
                 else:
                     res += step
 
-                print(f'Current cluster number obtained from Louvain: {num_cluster}')
-
             print(f'Accuracy of {dataset_name} {target}: {unseen_acc_D2}')
 
 
