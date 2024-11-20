@@ -98,7 +98,7 @@ if method == 'k-means' or method == 'louvain':
             sc.pp.neighbors(adata_ori)
 
             num_cluster = 0
-            res = 5.0
+            res = 7.0
             rounds = 0
             step = 0.1
 
@@ -134,7 +134,7 @@ if method == 'k-means' or method == 'louvain':
 
         pseudo_label = F.one_hot(torch.from_numpy(pred_t).to(torch.int64), num_classes=int(num_cluster)).to(device)
 
-        for ep in range(300):
+        for ep in range(1000):
 
             model.train()
             optimizer.zero_grad()
