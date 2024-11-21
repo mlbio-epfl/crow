@@ -95,7 +95,7 @@ if method == 'k-means' or method == 'louvain':
             feature_target_tmp = feature_target.numpy()
             dataframe = pd.DataFrame(feature_target_tmp)
             adata_ori = anndata.AnnData(dataframe)
-            sc.pp.neighbors(adata_ori)
+            sc.pp.neighbors(adata_ori, use_rep='X')
 
             num_cluster = 0
             res = 7.0
