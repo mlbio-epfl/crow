@@ -42,7 +42,7 @@ In our paper, we consider 75 different experiment settings. Here, we use OfficeH
 1. Get the CLIP pretrained model
 First, let's download the checkpoint of the CLIP pretrained model from [here](https://github.com/openai/CLIP/tree/main). In our experiment, we use ViT-L-14-336px. Please put it in the path './ckpt/clip/ViT-L-14-336px.pt'
 
-After getting the CLIP pretrained model, we begin to run CROW. Steps 2 and 3 are used to get the prototypes by applying k-means to the target samples and supervised learning to the source samples in the CLIP feature space. We provide the **precomputed prototypes** of both source and target samples. If you use our prototypes, please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'. Then, you can skip steps 2 and 3.
+After getting the CLIP pretrained model, we begin to run CROW. Steps 2 and 3 are used to get the prototypes by clustering the target samples and supervised learning to the source samples in the CLIP feature space. We provide the **precomputed prototypes** of both source and target samples. If you use our prototypes, please put them in the path './ckpt/prototype_source' and './ckpt/prototype_target'. Then, you can skip steps 2 and 3.
 
 Please download the prototypes [here](https://brbiclab.epfl.ch/wp-content/uploads/2024/06/CROW_prototypes.zip).
 
