@@ -46,7 +46,7 @@ After getting the CLIP pretrained model, we begin to run CROW. Steps 2 and 3 are
 
 Please download the prototypes [here](https://brbiclab.epfl.ch/wp-content/uploads/2024/06/CROW_prototypes.zip).
 
-*Update:* By using the provided prototypes, you should be able to get the results in the paper. If you run steps 2 and 3, you can get better results for Office and Office datasets compared to the results in the paper since we have further optimized some steps. In short, do not be surprised if you get better results compared to the performance in our paper :)
+*Update:* By using the provided prototypes, you should be able to get the results in the paper. If you run steps 2 and 3 to get the prototypes, you can get better results for Office and OfficeHome datasets than in the paper since we have further optimized some steps. In short, do not be surprised if you get better results compared to the performance in our paper :)
 
 2. Precompute and save the representation features
 ```
