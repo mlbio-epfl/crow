@@ -52,7 +52,7 @@ elif dataset_name == 'VisDA':
     method = 'k-means'
 elif dataset_name == 'DomainNet':
     total_class_num = 345
-    source = 'clipart'
+    source = 'painting'
     target_list = ['painting', 'real', 'sketch']
     method = 'k-means'
 else:
