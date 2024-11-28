@@ -132,7 +132,7 @@ if method == 'k-means' or method == 'louvain':
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
-        pseudo_label = F.one_hot(torch.from_numpy(pred_t).to(torch.int64), num_classes=int(num_cluster)).to(device)
+        pseudo_label = F.one_hot(torch.from_numpy(pred_t).to(torch.int64), num_classes=int(total_class_num)).to(device)
 
         for ep in range(1000):
 
