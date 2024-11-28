@@ -128,7 +128,7 @@ if method == 'k-means' or method == 'louvain':
 
 
         # supervised
-        model = models.MLP_simple(in_dim = 768, out_dim = int(num_cluster)).to(device)
+        model = models.MLP_simple(in_dim = 768, out_dim = int(total_class_num)).to(device)
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
