@@ -32,11 +32,11 @@ elif dataset_name == 'OfficeHome':
     target_list = ['Art', 'Clipart', 'Product', 'RealWorld']
     num_class = 65
 elif dataset_name == 'VisDA':
-    source = 'validation'
-    target_list = ['validation']
+    source = 'train'
+    target_list = ['train']
     num_class = 12
 elif dataset_name == 'DomainNet':
-    source = 'clipart'
+    source = 'painting'
     target_list = ['painting', 'real', 'sketch']
     num_class = 345
 else:
