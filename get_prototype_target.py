@@ -85,7 +85,7 @@ if method == 'k-means' or method == 'louvain':
         
         # 2.2. Get pseudo labels using clustering
         if method == 'k-means':
-            kmeans = KMeans(n_clusters=total_class_num, n_init="auto").fit(feature_target.cpu())
+            kmeans = KMeans(n_clusters=total_class_num, random_state=8, n_init="auto").fit(feature_target.cpu())
             pred_t = kmeans.labels_
 
             unseen_acc_D2 = cluster_acc(pred_t, label_t_all.numpy())
